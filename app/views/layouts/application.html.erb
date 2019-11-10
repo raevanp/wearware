@@ -11,17 +11,19 @@
   <body>
     <header class="row">
       <div class="col-3">
+       <%= link_to root_path, class: 'logo' do %>
         <div class="circle">
           <br />
           WEARwares
           <br />
         </div>
+       <% end %>
       </div>
       <div class="col-4 slogan">
         The latest in streetwear and couture.
       </div>
       <div class="col-5 links">
-        <%= link_to 'Chime In', '#' %>
+        <%= link_to 'Chime In', new_brand_path %>
         <%= link_to 'About Wearwares', '#' %>
       </div>
     </header>
@@ -29,9 +31,20 @@
     <hr />
 
     <br class="clear" />
+    
+    <div class="container">
+      <%= yield %>
+    </div>
 
-
-    <%= yield %>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <%= link_to "Browse trending designers", root_path, class: 'next-designer' %>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
   </body>
